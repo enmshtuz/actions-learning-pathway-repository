@@ -24,4 +24,8 @@ jobs:
         with:
           node-version: '18.x'
       - run: npm install
-      - run: npm test
+      - name: Run npm test
+        env:
+          ESLINT_NO_DEV_ERRORS: true
+        run: npm test -- --max-warnings=0
+
